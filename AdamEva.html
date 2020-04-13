@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Adam and Eva</title>
+</head>
+<body>
+    <script>
+        let Apple = function () {
+            this.weight = 10;
+            this.getWeight = function () {
+                return this.weight;
+            }
+            this.decreaseApple = function () {
+               if (this.weight>0){this.weight--;}
+            }
+
+        }
+        let Human = function (name,gender,weight) {
+            this.name = name;
+            this.gender = gender;
+            this.weight = weight;
+            this.say = function (say) {
+                console.log(say);
+            }
+            this.eatApple = function (apple) {
+                if (apple.weight>0){
+                apple.decreaseApple();
+                this.weight++;
+                }
+            }
+            this.checkApple = function (apple) {
+                return apple.getWeight();
+            }
+            this.getName = function () {
+                return this.name;
+            }
+            this.getWeight = function () {
+                return this.weight;
+            }
+            this.getGender = function () {
+                return this.gender;
+            }
+
+        }
+        //Tao doi tuong apple va human
+        let apple = new Apple();
+        console.log(apple.getWeight());
+
+        let adam = new Human("Adam","female",70);
+        let eva = new Human("Eva","male",60);
+        console.log(adam.say("hello Eva"));
+        console.log(eva.say("Hello adam"));
+        console.log(adam.say("Ăn táo hem?"));
+        console.log(eva.say("Yep hihi"));
+        eva.eatApple(apple);
+        adam.eatApple(apple);
+        eva.eatApple(apple);
+        adam.eatApple(apple);
+        eva.eatApple(apple);
+        adam.eatApple(apple);
+        eva.eatApple(apple);
+        adam.eatApple(apple);
+        eva.eatApple(apple);
+        adam.eatApple(apple);
+        console.log(adam.checkApple(apple));
+        console.log(adam.getWeight());
+        console.log(eva.getWeight());
+
+
+
+    </script>
+</body>
+</html>
